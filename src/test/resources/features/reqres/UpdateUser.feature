@@ -8,7 +8,7 @@ Feature: Update user reqres
     And Response body name should be "Binta Wira" and job "QA Engineer"
     And Validate json schema update user
 
-  @Tugas @NegativeCase
+  @Tugas @PositiveCase
   Scenario: Put update user with invalid json
     Given Update user with invalid json with id 2
     When Send request put update user

@@ -47,7 +47,7 @@ public class CreateUserStepDef {
 
 
     //Tugas 1
-    @Given("Post create user with invalid valid json")
+    @Given("Post create user with invalid json")
     public void postCreateUserWithInvalidValidJson() {
         File json = new File(Constant.JSON_REQUEST+"/Invalid.json");
         reqresAPI.postCreateUser(json);
@@ -67,5 +67,18 @@ public class CreateUserStepDef {
     public void postCreateUserWithNullName() {
         File json = new File(Constant.JSON_REQUEST+"/NullName.json");
         reqresAPI.postCreateUser(json);
+    }
+
+    @Given("Post create user with valid email and password")
+    public void postCreateUserWithValidEmailAndPassword() {
+        File json = new File(Constant.JSON_REQUEST+"ValidEmailPass.json");
+        reqresAPI.postCreateUser(json);
+    }
+
+    @And("Response body name should be {string} and {string}")
+    public void responseBodyNameShouldBeEmailAndPassword(String email, String password) {
+        SerenityRest.then()
+                .body(ReqresResponses.EMAIL, equalTo(email))
+                .body(ReqresResponses.PASSWORD, equalTo(password));
     }
 }

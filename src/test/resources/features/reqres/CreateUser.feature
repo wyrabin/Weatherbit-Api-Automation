@@ -1,6 +1,6 @@
 Feature: Create user reqres
 
-  @Latihan
+  @Latihan @PositiveCase
   Scenario: Post create new user with valid json
     Given Post create user with valid json
     When Send request post create user
@@ -8,9 +8,10 @@ Feature: Create user reqres
     And Response body name should be "Binta Wira" and job "QA Engineer"
     And Validate json schema create user
 
-  @Tugas @NegativeCase
+
+  @Tugas @PositiveCase
   Scenario: Post create new user with invalid json
-    Given Post create user with invalid valid json
+    Given Post create user with invalid json
     When Send request post create user
     Then Should return status code 400
     And Response body name should be "1" and job "QA Engineer"
