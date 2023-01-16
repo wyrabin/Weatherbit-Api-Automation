@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
 import starter.ReqresAPI;
@@ -44,5 +45,11 @@ public class UpdateUserStepDef {
     public void updateUserWithNullNameWithId(int id) {
         File json = new File(Constant.JSON_REQUEST+"/NullName.json");
         reqresAPI.updateUsers(id,json);
+    }
+
+    @And("Validate json schema update user")
+    public void validateJsonSchemaUpdateUser() {
+        File jsonSchema = new File(Constant.JSON_SCHEMA+"/UpdateUserSchema.json");
+        SerenityRest.then().assertThat().body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
     }
 }
