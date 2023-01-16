@@ -21,7 +21,7 @@ Feature: Update user reqres
     Given Update user with null name and job with id 2
     When Send request put update user
     Then Should return status code 400
-    And Response body name should be "Binta Wira" and job "QA Engineer"
+    And Response body name should be "" and job ""
     And Validate json schema update user
 
   @Tugas @NegativeCase
@@ -29,7 +29,7 @@ Feature: Update user reqres
     Given Update user with null name with id 2
     When Send request put update user
     Then Should return status code 400
-    And Response body name should be "Binta Wira" and job "QA Engineer"
+    And Response body name should be "" and job "QA Engineer"
     And Validate json schema update user
 
 
