@@ -20,15 +20,21 @@ public class LoginUserStepDef {
     @Steps
     ReqresAPI reqresAPI;
 
-    @Given("Login with valid email and password")
+    @Given("Login with valid json")
     public void loginWithValidEmailAndPassword() {
-        File json = new File(Constant.JSON_REQUEST +"/RequestLogin.json");
+        File json = new File(Constant.JSON_REQUEST+"/LoginRequest.json");
         reqresAPI.loginUser(json);
     }
 
     @When("Send request login user")
     public void sendRequestLoginUser() {
         SerenityRest.when().post(ReqresAPI.LOGIN_USER);
+    }
+
+    @And("Response body page should be {string}")
+    public void responseBodyPageShouldBeAndLogin(String token) {
+        SerenityRest.then()
+                .body(ReqresResponses.TOKEN,equalTo(token));
     }
 
     @And("Validate user get token")
@@ -40,15 +46,8 @@ public class LoginUserStepDef {
 
     @Given("Login with valid email and empty password")
     public void loginWithValidEmailAndEmptyPassword() {
-        File json = new File(ReqresAPI.JSON_REQUEST +"/WithoutPass.json");
+        File json = new File(Constant.JSON_REQUEST+"/WithoutPass.json");
         reqresAPI.loginUser(json);
 
-    }
-
-    @And("Response body page should be {string} and {string} login")
-    public void responseBodyPageShouldBeAndLogin(String email, String password) {
-        SerenityRest.then()
-                .body(ReqresResponses.EMAIL, Matchers.equalTo(email))
-                .body(ReqresResponses.PASSWORD, Matchers.equalTo(password));
     }
 }
