@@ -7,12 +7,12 @@ Feature: Update user reqres
     Then Should return status code 200
     And Response body name should be "Binta Wira" and job "QA Engineer"
 
-    @Tugas @NegativeCase
-    Scenario: Put update user with invalid json
-      Given Update user with invalid json with id 2
-      When Send request put update user
-      Then Should return status code 400
-      And Response body name should be "Binta Wira" and job "QA Engineer"
+  @Tugas @NegativeCase
+  Scenario: Put update user with invalid json
+    Given Update user with invalid json with id 2
+    When Send request put update user
+    Then Should return status code 400
+    And Response body name should be "Binta Wira" and job "QA Engineer"
 
   @Tugas @NegativeCase
   Scenario: Put update user with null name and job

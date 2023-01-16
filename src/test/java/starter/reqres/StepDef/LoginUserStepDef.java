@@ -1,11 +1,14 @@
 package starter.reqres.StepDef;
 
+import Utils.Constant;
+import Utils.ReqresResponses;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import net.serenitybdd.rest.SerenityRest;
 import net.thucydides.core.annotations.Steps;
+import org.hamcrest.Matchers;
 import starter.ReqresAPI;
 
 import java.io.File;
@@ -19,7 +22,7 @@ public class LoginUserStepDef {
 
     @Given("Login with valid email and password")
     public void loginWithValidEmailAndPassword() {
-        File json = new File(ReqresAPI.JSON_REQUEST +"/RequestLogin.json");
+        File json = new File(Constant.JSON_REQUEST +"/RequestLogin.json");
         reqresAPI.loginUser(json);
     }
 
@@ -40,5 +43,12 @@ public class LoginUserStepDef {
         File json = new File(ReqresAPI.JSON_REQUEST +"/WithoutPass.json");
         reqresAPI.loginUser(json);
 
+    }
+
+    @And("Response body page should be {string} and {string} login")
+    public void responseBodyPageShouldBeAndLogin(String email, String password) {
+        SerenityRest.then()
+                .body(ReqresResponses.EMAIL, Matchers.equalTo(email))
+                .body(ReqresResponses.PASSWORD, Matchers.equalTo(password));
     }
 }

@@ -15,16 +15,10 @@ public class ReqresAPI {
     public static String GET_LIST_ALL_USERS = BASE_URL + "/api/users";
     public static String GET_USER_ID = BASE_URL + "/api/users/{id}";
     public static String GET_USER_EMAIL = BASE_URL + "/api/users?email={email}";
-
-
     public static String POST_CREATE_USER = BASE_URL + "/api/users";
-
-
     public static String PUT_UPDATE_USER = BASE_URL + "/api/users/{id}";
-
     public static String DELETE_USER = BASE_URL + "/api/users/{id}";
     public static String LOGIN_USER = BASE_URL + "/api/login";
-
     public static String REGISTER_USER = BASE_URL + "/api/register";
 
     @Step("Get list User")
