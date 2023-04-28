@@ -1,10 +1,6 @@
 package Utils;
 
 public class Constant {
-    public static String BASE_URL = "https://reqres.in"; //ini base URL
-    public static final String DIR = System.getProperty("user.dir"); //ini untuk dapatkan location project
-
-    public static String JSON_REQUEST = DIR + "/src/test/resources/JSON/Request"; //untuk path JSON Request
-
-    public static String JSON_SCHEMA = DIR + "/src/test/resources/JSON/JsonSchema"; //untuk path JSON Schema
+    public static String BASE_URL = "https://api.weatherbit.io/v2.0"; //This is Base URL
+    public static String KEY = "6e0f8ee173264cd3abce17877fedc8cf"; // This is API Key
 }
