@@ -15,3 +15,10 @@ jobs:
           distribution: 'temurin'
       - name: Run the Maven verify phase
         run: mvn --batch-mode --update-snapshots verify
+        
+      - name: Upload Serenity BDD report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Serenity Report
+          path: target/site/serenity
+
