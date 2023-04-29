@@ -29,6 +29,10 @@ To running the test, please follow this steps:
 - You can see the results on folder target -> site -> index.html
 - Open index.html with your default web browser
 
+NOTE:
+<p>You can also see the latest report on the action tab. Click on the latest workflow, scroll down. In the artifact section you can download the serenity report [here](https://github.com/wyrabin/Weatherbit-Api-Automation/suites/12566456231/artifacts/671737698)
+</p>
+
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
