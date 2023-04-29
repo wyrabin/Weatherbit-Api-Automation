@@ -22,12 +22,17 @@ What things you need to install the software and how to install them.
 ## 🔧 Running the tests <a name = "tests"></a>
 
 To running the test, please follow this steps:
-- Run the tests using the following command. The test will be run on the headless mode. Wait until the test is finished.
+1. Clone the repository
+    ```
+   git clone https://github.com/wyrabin/Weatherbit-Api-Automation.git
+    ```
+2. Open the repository / project with Intellij IDEA  
+3. Run the tests using the following command. The test will be run on the headless mode. Wait until the test is finished.
     ```
     mvn clean verify
     ```
-- You can see the results on folder target -> site -> index.html
-- Open index.html with your default web browser
+4. You can see the results on folder target -> site -> index.html
+5. Open index.html with your default web browser
 
 NOTE:
 <p>You can also see the latest report on the action tab. Click on the latest workflow, scroll down. In the artifact section you can download the serenity report [here](https://github.com/wyrabin/Weatherbit-Api-Automation/suites/12566456231/artifacts/671737698)
