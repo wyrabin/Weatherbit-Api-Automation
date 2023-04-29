@@ -31,7 +31,7 @@ To running the test, please follow this steps:
     ```
     mvn clean verify
     ```
-4. You can see the results on folder target -> site -> index.html
+4. You can see the report on folder target -> site -> index.html
 5. Open index.html with your default web browser
 
 NOTE:
